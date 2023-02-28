@@ -11,8 +11,6 @@
 
 ----
 
-<strong><big></big></strong><br>
-
 <strong>* 여러개의 값을 자료 구조(객체, 배열 등)를 이용하여 하나의 값 처럼 사용할 수 있다.</strong>
 ```bash
 var name = 'Keun'; //하나의 값
