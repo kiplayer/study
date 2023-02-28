@@ -4,17 +4,15 @@
 
 <blockquote class="well alert-block alert-danger">
 <big>
-As of 2017, DeepDive project is in maintenance mode and no longer under active development.
-The user community remains active, but the original project members can no longer promise exciting new features/improvements or responding to requests.
-For the more up-to-date research, please see the <a href="https://hazyresearch.github.io/snorkel/">Snorkel Project</a> or <a href="https://ds3lab.org/~czhang/">Ce Zhang's Projects</a>.
+변수는 하나의 값을 저장하기 위해 확보한 메모리 공간 자체 또는 그 메모리 공간을 식별하기 위해 붙인 이름을 말한다.<br>
+다시 말해서 프로그래밍을 하기 위해서 어떤 값을 저장하고 사용하기 위해서 만들어진 식별자, 이름을 말한다.
 </big>
 </blockquote>
 
 ----
 
-<strong><big>변수는 하나의 값을 저장하기 위해 확보한 메모리 공간 자체 또는 그 메모리 공간을 식별하기 위해 붙인 이름을 말한다.</big></strong><br>
+<strong><big></big></strong><br>
 
-<strong>* 프로그래밍을 하기 위해서 어떤 값을 저장하고 사용하기 위해서 만들어진 식별자, 이름을 말한다.</strong><br>
 <strong>* 여러개의 값을 자료 구조(객체, 배열 등)를 이용하여 하나의 값 처럼 사용할 수 있다.</strong>
 ```bash
 var name = 'Keun'; //하나의 값
