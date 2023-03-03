@@ -133,6 +133,14 @@ var lastName = 'Keun';
 console.log(lastName); //'Keun'
 ```
 
+var, let은 중복선언이 가능합니다.
+```javascript
+var lastName;
+var lastName;
+let lastName;
+let lastName;
+```
+
 ### 브라우저 예외
 
 브라우저에서는 window 객체에 담겨 있는 것들의 경우, window가 없이 사용할 수 있습니다. window.name, window.open, window.localStorage 등 앞의 window. 를 넣지 않아도 되는 명칭의 경우 이미 정의가 되어 있기 때문에, 오류가 발생하지 않으며, 일부는 값의 재할당을 통해서 변형도 가능합니다.
@@ -175,6 +183,12 @@ console.log(localStorage); //'Storage {length: 0}'
 ```javascript
 var lastName; //변수의 선언
 var lastName = 'Keun'; // 변수의 선언과 값의 할당하는 경우
+```
+
+선언하지 않은 변수에 값을 할당되면 자동으로 var을 사용하는 변수가 생성됩니다.
+```javascript
+lastName = 'Keun'; 
+console.log(lastName); //'Keun'
 ```
 
 변수의 선언과 할당에 대한 동작 예시
