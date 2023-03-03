@@ -133,13 +133,38 @@ var lastName = 'Keun';
 console.log(lastName); //'Keun'
 ```
 
-예외! 예약어 및 금지어가 아닌 경우에도 이것 처럼 'name'처럼 변수 선언 과정이 이루어지지 않았지만, 오류 혹은 undefined 초기화가 아닌 정의가 되어 있는 것이 있습니다.
+### 브라우저 예외
 
-호이스팅 : 변수 선언문이 코드의 선두로 끌어 올려진 것처럼 동작하는 자바스크립트 고유의 특징 말합니다.
+브라우저에서는 window 객체에 담겨 있는 것들의 경우, window가 없이 사용할 수 있습니다. window.name, window.open, window.localStorage 등 앞의 window. 를 넣지 않아도 되는 명칭의 경우 이미 정의가 되어 있기 때문에, 오류가 발생하지 않으며, 일부는 값의 재할당을 통해서 변형도 가능합니다.
+
+* 오류가 나지 않는 경우
 
 ```javascript
 console.log(name); //''
+console.log(window.name); //''
+console.log(open); //'ƒ open() { [native code] }'
+console.log(window.open); //'ƒ open() { [native code] }'
 ```
+
+* 재할당 주의
+
+```javascript
+name = 'Keun'
+console.log(name); //'Keun'
+
+open = 'Y'
+console.log(open); //'Y'
+window.open('www.naver.com'); //'window.open is not a function'
+```
+
+* 재할당 불가
+* 
+```javascript
+localStorage = { a: 'b' };
+console.log(localStorage); //'Storage {length: 0}'
+```
+
+호이스팅 : 변수 선언문이 코드의 선두로 끌어 올려진 것처럼 동작하는 자바스크립트 고유의 특징 말합니다.
 <br><br>   
 
 ## 4.5 값의 할당
@@ -243,6 +268,7 @@ var LASTNAME; //문자에 대한 가독성을 높이기 위해서 카멜 케이�
 
 * 진행중인 프로젝트의 경우 사용중인 네이밍 규칙을 최대한 유지하는 것을 권장합니다.
 * DB나 BE에서 사용되는 그대로를 사용하는 경우 보안에 문제가 있거나, 더 복잡해질 수 있습니다.
+* 변수명이 너무 길지 않으면서 가독성이 좋은 명칭이 좋다고 생각합니다.
 
 
 
