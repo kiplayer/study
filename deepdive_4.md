@@ -113,10 +113,24 @@ console.log(typeof count); //'function'
 자바스크립트는 인터프리터 언어로 위에서 부터 한줄씩 순차적으로 실행됩니다.
 변수 선언의 경우 소스코드가 순차적으로 실행되는 런타임에 따라 실행되는 것이 아니라 그 이전 단계에서 먼저 실행됩니다.
 
+* 기존 var 과 let, const 차이점
+```javascript
+console.log(lastName); //'undefined'
+var lastName = 'Keun';
+
+console.log(firstName);
+let firstName = 'Kim'; //'Cannot access 'firstName' before initialization'
+```
+
+var 선언은 호이스팅되어서 변수 선언, 초기화 상태로 undefined 로 출력되며, let, const 등은 변수 초기화 전에는 사용할 수 없다는 메세지가 출력 됩니다. 
+
 * 하나의 코드내에 있는 경우
 ```javascript
 console.log(lastName); //'undefined'
 var lastName = 'Keun';
+
+console.log(firstName);
+let firstName = 'Kim'; //'Cannot access 'firstName' before initialization'
 ```
 
 * 순차적으로 개별 실행하는 경우
@@ -283,6 +297,25 @@ var LASTNAME; //문자에 대한 가독성을 높이기 위해서 카멜 케이�
 * 진행중인 프로젝트의 경우 사용중인 네이밍 규칙을 최대한 유지하는 것을 권장합니다.
 * DB나 BE에서 사용되는 그대로를 사용하는 경우 보안에 문제가 있거나, 더 복잡해질 수 있습니다.
 * 변수명이 너무 길지 않으면서 가독성이 좋은 명칭이 좋다고 생각합니다.
+<br><br>
+
+## var 단점
+
+### 선언의 중복 가능
+
+프로그래밍시 일부 변수는 원시값 유지 혹은 변경을 해서는 안되는 변수가 존재할 수 있는데
+ES5까지는 변수 선언이 var 뿐이었음으로, 식별자의 인식, 값의 변조, 보안 상 문제들이 있었습니다.
+
+### 함수 레벨 스코프
+
+var 키워드는 함수 레벨 스코프를 지원하기 때문에, if, for문 등의 내부에서는 전역과 동일하게 동작합니다.
+
+### 호이스팅 가능
+
+
+
+
+
 
 
 
