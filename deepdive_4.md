@@ -113,24 +113,12 @@ console.log(typeof count); //'function'
 자바스크립트는 인터프리터 언어로 위에서 부터 한줄씩 순차적으로 실행됩니다.
 변수 선언의 경우 소스코드가 순차적으로 실행되는 런타임에 따라 실행되는 것이 아니라 그 이전 단계에서 먼저 실행됩니다.
 
-* 기존 var 과 let, const 차이점
-```javascript
-console.log(lastName); //'undefined'
-var lastName = 'Keun';
-
-console.log(firstName);
-let firstName = 'Kim'; //'Cannot access 'firstName' before initialization'
-```
-
-var 선언은 호이스팅되어서 변수 선언, 초기화 상태로 undefined 로 출력되며, let, const 등은 변수 초기화 전에는 사용할 수 없다는 메세지가 출력 됩니다. 
+호이스팅 : 변수 선언문이 코드의 선두로 끌어 올려진 것처럼 동작하는 자바스크립트 고유의 특징 말합니다.
 
 * 하나의 코드내에 있는 경우
 ```javascript
 console.log(lastName); //'undefined'
 var lastName = 'Keun';
-
-console.log(firstName);
-let firstName = 'Kim'; //'Cannot access 'firstName' before initialization'
 ```
 
 * 순차적으로 개별 실행하는 경우
@@ -146,6 +134,17 @@ var lastName = 'Keun';
 var lastName = 'Keun';
 console.log(lastName); //'Keun'
 ```
+
+* 기존 var 과 let, const 차이점
+```javascript
+console.log(lastName); //'undefined'
+var lastName = 'Keun';
+
+console.log(firstName);
+let firstName = 'Kim'; //'Cannot access 'firstName' before initialization'
+```
+
+var 선언은 호이스팅되어서 변수 선언, 초기화 상태로 undefined 로 출력되며, let, const 등은 변수 초기화 전에는 사용할 수 없다는 메세지가 출력 됩니다. 
 
 var, let은 중복선언이 가능합니다.
 ```javascript
@@ -180,13 +179,12 @@ window.open('www.naver.com'); //'window.open is not a function'
 ```
 
 * 재할당 불가
-* 
+
 ```javascript
 localStorage = { a: 'b' };
 console.log(localStorage); //'Storage {length: 0}'
 ```
 
-호이스팅 : 변수 선언문이 코드의 선두로 끌어 올려진 것처럼 동작하는 자바스크립트 고유의 특징 말합니다.
 <br><br>   
 
 ## 4.5 값의 할당
