@@ -51,7 +51,7 @@ var lastName = 'Keun';
 변수를 사용하려면 반드시 선언이 필요하며, 변수 이외에도 메모리에 저장이 필요한 함수, 클래스 등도 사용하기 위해서는 선언이 필요합니다.
 
 키워드 : 자바스크립트 코드를 해석하고 실행하는 자바스크립트 엔진이 수행할 동작을 규정한 일종의 명령어(대소문자 구분함)
-var, let, const 키워드 뒤에 오는 문자를 변수명으로 인식합니다. 
+var(variable), let(let), const(constant) 키워드 뒤에 오는 문자를 변수명으로 인식합니다. 
 
 변수 선언 벙법에는 총 3가지 키워드가 있으며, ES6이전 var만 사용가능하다가 var의 단점을 보완하여, ES6부터는 let, const가 추가 되었습니다.
 
@@ -287,8 +287,8 @@ var delete; //'Unexpected token 'delete''
 권장하지 않는 식별자 예)
 ```javascript
 var a = 1; //변수 목적이 불분명함
-var lastname; //문자에 대한 가독성을 높이기 위해서 카멜 케이스를 추천
-var LASTNAME; //문자에 대한 가독성을 높이기 위해서 카멜 케이스를 추천
+var lastname; //문자에 대한 가독성을 높이기 위해서 카멜 케이스(lastName)를 추천
+var LASTNAME; //문자에 대한 가독성을 높이기 위해서 카멜 케이스(lastName)를 추천
 ```
 <br>
 
@@ -309,6 +309,26 @@ ES5까지는 변수 선언이 var 뿐이었음으로, 식별자의 인식, 값�
 ### 함수 레벨 스코프
 
 var 키워드는 함수 레벨 스코프를 지원하기 때문에, if, for문 등의 내부에서는 전역과 동일하게 동작합니다.
+
+```javascript
+function varTest() {
+  var x = 1;
+  if (true) {
+    var x = 2; // 같은 변수!
+    console.log(x); // 2
+  }
+  console.log(x); // 2
+}
+
+function letTest() {
+  let x = 1;
+  if (true) {
+    let x = 2; // 다른 변수
+    console.log(x); // 2
+  }
+  console.log(x); // 1
+}
+```
 
 ### 호이스팅 가능
 
