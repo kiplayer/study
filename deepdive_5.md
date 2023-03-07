@@ -168,16 +168,43 @@ const doScore = function(){
 ```javascript
 let score = 10;
 
-const doScore = function(){
+const doScore1 = function(){
   return
     score
-} //'undefined'
+}
+doScore1(); //'undefined'
 
-const doScore = function(){
+const doScore2 = function(){
   return score
-} //'undefined'
+}
+doScore2(); //'10'
 ```
 
+위의 예시에서 doScore1 의 함수는 return ; score ; 이런 형식으로 동작하였기 때문에 결과 값이 undefined 가 됩니다.
+<br><br>
 
+## 표현식이 아닌 문의 구별
 
+표현식은 문의 일부일 수도 있고 그 자체로 문이 될 수도 있다.
+표현식은 값으로 평가 되어야 하기 때문에 변수의 식별자만 선언하는 경우는 값으로 평가할 수가 없기 때문에 표현식으로 볼 수 없다.
 
+표현식인 문과 표현식이 아닌 문을 구별하는 가장 간단하고 명료한 방법은 변수에 할당해 보는 것이다.
+
+```javascript
+var foo = var x;
+```
+위의 예시에서 식별자를 선언하는 문은 표현식이 아니기 때문에 할당하는 값으로는 사용할 수 없다.
+
+```javascript
+var score = 10; // 'undefined'
+point = 10; // '10' 값으로 평가 되었기 때문에 표현식입니다.
+var count; // 값으로 평가될 수 없음으로 표현식이 아닙니다.
+```
+<br><br>
+
+### 완료 값
+
+크롬 개발자 도구에서 표현식이 아닌 문을 실행하면 언제나 undefined를 출력한다.
+이를 완료 값이라고 한다. 완료 값은 표현식의 평가 결과가 아니며 다른 값과 같이 변수에 할당할 수 없고, 참조할 수도 없다.
+
+개발자 도구 콘솔에서 표현식의 경우는 평가된 값을 반환하며, 표현식이 아닌 경우 undefined를 반환한다.
